@@ -1,0 +1,7 @@
+no_user:
+    resource: "@NOUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+no_front:
+    resource: "@NOFrontBundle/Resources/config/routing.yml"
+    prefix:   /
