@@ -1,0 +1,61 @@
+{% extends "NOFrontBundle::base.html.twig" %}
+
+{% block title %}Index - {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1>Noviris/Test </h1>
+<div class="row">
+	<div class="col-md-6"><p>Les 3 internautes les plus agés</p>
+<!-- mettre le tableau dans un fichier séparé mais pas le temps d'apprendre tout cela !	-->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+      </tr>
+    </thead>
+    <tbody>
+	    {% for internaute in oldest_internautes %}
+      <tr>
+        <td>{{internaute.getNom()}}</td>
+        <td>{{internaute.getPrenom()}}</td>
+      </tr>
+		{% endfor %}
+    </tbody>
+  </table>
+<!-- mettre le tableau dans un fichier séparé mais pas le temps d'apprendre tout cela !	-->
+	
+	</div>
+	<div class="col-md-6"><p>Ajoutez un internaute</p>{{ form(form) }}</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>var voitures = {};
+voitures[1] = {};voitures[1][1] = "206";voitures[1][2] = "508";
+voitures[2] = {};voitures[2][1] = "Clio";voitures[2][2] = "Megane";
+voitures[3] = {};voitures[3][1] = "Punto";
+
+			$("#internaute_marque").change(function() {
+				var id = $(this).val();
+				$("#internaute_modele").empty();
+				  var option = $("<option>", {
+				      value: "",
+				      label: "",
+				      html: ""
+				  });
+				$("#internaute_modele").append(option);
+				if(voitures[id]) 
+					$.each(voitures[id], function(index, item) { 
+					if(index!= "undefined"){
+						  var option = $("<option>", {
+						      value: index,
+						      label: item,
+						      html: item
+						  });
+							$("#internaute_modele").append(option);
+						}
+					});
+				});
+</script>
+{% endblock %}

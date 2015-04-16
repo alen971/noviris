@@ -1,0 +1,7 @@
+#parameters:
+#    no.internaute_manager.class: NO\FrontBundle\Manager\InternauteManager
+#services:
+#    no.internaute_manager:
+#        class: %no.internaute_manager.class%
+#        arguments: ['@doctrine.orm.entity_manager']
+#        auto_mapping: true

@@ -1,0 +1,18 @@
+{% extends "NOFrontBundle::base.html.twig" %}
+
+{% block title %}Félicitations - {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1>Merci !  </h1>
+<div class="row">
+	<div class="col-md-12">Merci {{ prenom }}, votre inscription a bien été	enregistrée</div>
+	<p><em>Redirection dans quelques secondes</em></p>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+<script>
+ setTimeout(window.location='{{ url }}',5000);
+</script>
+ {% endblock %}

@@ -1,0 +1,29 @@
+NO\FrontBundle\Entity\Internaute:
+    type: entity
+    table: null
+    repositoryClass: NO\FrontBundle\Entity\InternauteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        datedenaissance:
+            type: date
+        marque:
+            type: string
+            length: 255
+        modele:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

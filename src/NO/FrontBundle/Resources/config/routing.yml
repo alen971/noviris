@@ -1,0 +1,11 @@
+_index:
+    path:     /
+    defaults: { _controller: NOFrontBundle:Default:index }
+_added:
+    path:     /saved/{id}
+    defaults: { _controller: NOFrontBundle:Default:added }
+_admin:
+    path:     /admin
+    defaults: { _controller: NOFrontBundle:Default:admin }
+user_bundle:
+   resource: "@NOUserBundle/Resources/config/routing.yml"	
